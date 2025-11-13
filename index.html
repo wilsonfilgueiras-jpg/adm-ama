@@ -1,0 +1,1959 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planejamento e Monitoramento de Atividades Administrativas</title>
+    <style>
+:root {
+  /* Primitive Color Tokens */
+  --color-white: rgba(255, 255, 255, 1);
+  --color-black: rgba(0, 0, 0, 1);
+  --color-cream-50: rgba(252, 252, 249, 1);
+  --color-cream-100: rgba(255, 255, 253, 1);
+  --color-gray-200: rgba(245, 245, 245, 1);
+  --color-gray-300: rgba(167, 169, 169, 1);
+  --color-gray-400: rgba(119, 124, 124, 1);
+  --color-slate-500: rgba(98, 108, 113, 1);
+  --color-brown-600: rgba(94, 82, 64, 1);
+  --color-charcoal-700: rgba(31, 33, 33, 1);
+  --color-charcoal-800: rgba(38, 40, 40, 1);
+  --color-slate-900: rgba(19, 52, 59, 1);
+  --color-teal-300: rgba(50, 184, 198, 1);
+  --color-teal-400: rgba(45, 166, 178, 1);
+  --color-teal-500: rgba(33, 128, 141, 1);
+  --color-teal-600: rgba(29, 116, 128, 1);
+  --color-teal-700: rgba(26, 104, 115, 1);
+  --color-teal-800: rgba(41, 150, 161, 1);
+  --color-red-400: rgba(255, 84, 89, 1);
+  --color-red-500: rgba(192, 21, 47, 1);
+  --color-orange-400: rgba(230, 129, 97, 1);
+  --color-orange-500: rgba(168, 75, 47, 1);
+
+  --color-brown-600-rgb: 94, 82, 64;
+  --color-teal-500-rgb: 33, 128, 141;
+  --color-slate-900-rgb: 19, 52, 59;
+  --color-slate-500-rgb: 98, 108, 113;
+  --color-red-500-rgb: 192, 21, 47;
+  --color-red-400-rgb: 255, 84, 89;
+  --color-orange-500-rgb: 168, 75, 47;
+  --color-orange-400-rgb: 230, 129, 97;
+
+  --color-bg-1: rgba(59, 130, 246, 0.08);
+  --color-bg-2: rgba(245, 158, 11, 0.08);
+  --color-bg-3: rgba(34, 197, 94, 0.08);
+  --color-bg-4: rgba(239, 68, 68, 0.08);
+  --color-bg-5: rgba(147, 51, 234, 0.08);
+  --color-bg-6: rgba(249, 115, 22, 0.08);
+  --color-bg-7: rgba(236, 72, 153, 0.08);
+  --color-bg-8: rgba(6, 182, 212, 0.08);
+
+  --color-background: var(--color-cream-50);
+  --color-surface: var(--color-cream-100);
+  --color-text: var(--color-slate-900);
+  --color-text-secondary: var(--color-slate-500);
+  --color-primary: var(--color-teal-500);
+  --color-primary-hover: var(--color-teal-600);
+  --color-primary-active: var(--color-teal-700);
+  --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
+  --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
+  --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
+  --color-border: rgba(var(--color-brown-600-rgb), 0.2);
+  --color-btn-primary-text: var(--color-cream-50);
+  --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
+  --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
+  --color-error: var(--color-red-500);
+  --color-success: var(--color-teal-500);
+  --color-warning: var(--color-orange-500);
+  --color-info: var(--color-slate-500);
+  --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
+  --color-select-caret: rgba(var(--color-slate-900-rgb), 0.8);
+
+  --focus-ring: 0 0 0 3px var(--color-focus-ring);
+  --focus-outline: 2px solid var(--color-primary);
+
+  --font-family-base: "FKGroteskNeue", "Geist", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-size-sm: 12px;
+  --font-size-base: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 18px;
+  --font-size-2xl: 20px;
+  --font-size-3xl: 24px;
+  --font-size-4xl: 30px;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 550;
+  --font-weight-bold: 600;
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --letter-spacing-tight: -0.01em;
+
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+
+  --radius-sm: 6px;
+  --radius-base: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-gray-400-rgb: 119, 124, 124;
+    --color-teal-300-rgb: 50, 184, 198;
+    --color-gray-300-rgb: 167, 169, 169;
+    --color-gray-200-rgb: 245, 245, 245;
+
+    --color-bg-1: rgba(29, 78, 216, 0.15);
+    --color-bg-2: rgba(180, 83, 9, 0.15);
+    --color-bg-3: rgba(21, 128, 61, 0.15);
+    --color-bg-4: rgba(185, 28, 28, 0.15);
+    --color-bg-5: rgba(107, 33, 168, 0.15);
+    --color-bg-6: rgba(194, 65, 12, 0.15);
+    --color-bg-7: rgba(190, 24, 93, 0.15);
+    --color-bg-8: rgba(8, 145, 178, 0.15);
+
+    --color-background: var(--color-charcoal-700);
+    --color-surface: var(--color-charcoal-800);
+    --color-text: var(--color-gray-200);
+    --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
+    --color-primary: var(--color-teal-300);
+    --color-primary-hover: var(--color-teal-400);
+    --color-primary-active: var(--color-teal-800);
+    --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
+    --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
+    --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
+    --color-border: rgba(var(--color-gray-400-rgb), 0.3);
+    --color-error: var(--color-red-400);
+    --color-success: var(--color-teal-300);
+    --color-warning: var(--color-orange-400);
+    --color-info: var(--color-gray-300);
+    --color-focus-ring: rgba(var(--color-teal-300-rgb), 0.4);
+    --color-btn-primary-text: var(--color-slate-900);
+    --color-card-border: rgba(var(--color-gray-400-rgb), 0.2);
+    --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.15);
+    --color-select-caret: rgba(var(--color-gray-200-rgb), 0.8);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: 'FKGroteskNeue';
+  src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2') format('woff2');
+}
+
+.header {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-24) var(--space-16);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.header h1 {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: var(--space-8);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.header p {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.nav {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-12) var(--space-16);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  gap: var(--space-8);
+  overflow-x: auto;
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-btn {
+  padding: var(--space-8) var(--space-16);
+  background: var(--color-secondary);
+  border: none;
+  border-radius: var(--radius-base);
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-standard);
+  white-space: nowrap;
+}
+
+.nav-btn:hover {
+  background: var(--color-secondary-hover);
+}
+
+.nav-btn.active {
+  background: var(--color-primary);
+  color: var(--color-btn-primary-text);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-32) var(--space-16);
+}
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-24);
+  margin-bottom: var(--space-24);
+  box-shadow: var(--shadow-md);
+}
+
+.card h2 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: var(--space-16);
+}
+
+.card h3 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin-top: var(--space-24);
+  margin-bottom: var(--space-12);
+}
+
+.card h4 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin-top: var(--space-16);
+  margin-bottom: var(--space-8);
+}
+
+.card p {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-text);
+  margin-bottom: var(--space-16);
+}
+
+.card ul, .card ol {
+  margin-left: var(--space-24);
+  margin-bottom: var(--space-16);
+}
+
+.card li {
+  margin-bottom: var(--space-8);
+  color: var(--color-text);
+}
+
+.author-quote {
+  background: var(--color-bg-1);
+  border-left: 4px solid var(--color-primary);
+  padding: var(--space-16);
+  margin: var(--space-16) 0;
+  border-radius: var(--radius-base);
+}
+
+.author-quote strong {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.example-box {
+  background: var(--color-bg-3);
+  padding: var(--space-16);
+  border-radius: var(--radius-base);
+  margin: var(--space-16) 0;
+}
+
+.example-box h4 {
+  color: var(--color-success);
+  margin-top: 0;
+}
+
+.img-container {
+  margin: var(--space-24) 0;
+  text-align: center;
+}
+
+.img-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.img-caption {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-8);
+  font-style: italic;
+}
+
+.btn {
+  display: inline-block;
+  padding: var(--space-12) var(--space-24);
+  background: var(--color-primary);
+  color: var(--color-btn-primary-text);
+  border: none;
+  border-radius: var(--radius-base);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.btn:hover {
+  background: var(--color-primary-hover);
+}
+
+.btn-secondary {
+  background: var(--color-secondary);
+  color: var(--color-text);
+}
+
+.btn-secondary:hover {
+  background: var(--color-secondary-hover);
+}
+
+.quiz-container {
+  background: var(--color-bg-2);
+  padding: var(--space-24);
+  border-radius: var(--radius-lg);
+  margin: var(--space-24) 0;
+}
+
+.quiz-question {
+  margin-bottom: var(--space-24);
+}
+
+.quiz-question p {
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-12);
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.quiz-option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.quiz-option input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.quiz-option label {
+  cursor: pointer;
+  font-size: var(--font-size-base);
+}
+
+.quiz-result {
+  margin-top: var(--space-16);
+  padding: var(--space-16);
+  border-radius: var(--radius-base);
+  font-weight: var(--font-weight-medium);
+  display: none;
+}
+
+.quiz-result.show {
+  display: block;
+}
+
+.quiz-result.success {
+  background: rgba(var(--color-teal-500-rgb), 0.15);
+  color: var(--color-success);
+  border: 1px solid var(--color-success);
+}
+
+.quiz-result.error {
+  background: rgba(var(--color-red-500-rgb), 0.15);
+  color: var(--color-error);
+  border: 1px solid var(--color-error);
+}
+
+.table-container {
+  overflow-x: auto;
+  margin: var(--space-24) 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-surface);
+  border-radius: var(--radius-base);
+  overflow: hidden;
+}
+
+th, td {
+  padding: var(--space-12);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+th {
+  background: var(--color-secondary);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+tr:hover {
+  background: var(--color-bg-1);
+}
+
+.expandable-row {
+  cursor: pointer;
+}
+
+.expandable-content {
+  display: none;
+  padding: var(--space-16);
+  background: var(--color-bg-3);
+  border-radius: var(--radius-base);
+  margin-top: var(--space-8);
+}
+
+.expandable-content.show {
+  display: block;
+}
+
+.checklist {
+  background: var(--color-surface);
+  padding: var(--space-24);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-card-border);
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  padding: var(--space-12);
+  margin-bottom: var(--space-8);
+  background: var(--color-bg-1);
+  border-radius: var(--radius-base);
+  transition: all var(--duration-fast) var(--ease-standard);
+}
+
+.checklist-item:hover {
+  background: var(--color-bg-2);
+}
+
+.checklist-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.checklist-item label {
+  cursor: pointer;
+  flex: 1;
+  font-size: var(--font-size-base);
+}
+
+.checklist-item.checked {
+  opacity: 0.6;
+}
+
+.checklist-item.checked label {
+  text-decoration: line-through;
+}
+
+.form-group {
+  margin-bottom: var(--space-16);
+}
+
+.form-group label {
+  display: block;
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--space-8);
+  color: var(--color-text);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: var(--space-12);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-base);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-base);
+  background: var(--color-surface);
+  color: var(--color-text);
+  transition: border-color var(--duration-fast) var(--ease-standard);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: var(--focus-ring);
+}
+
+.ata-generator {
+  background: var(--color-bg-5);
+  padding: var(--space-24);
+  border-radius: var(--radius-lg);
+  margin: var(--space-24) 0;
+}
+
+.ata-output {
+  background: var(--color-surface);
+  padding: var(--space-24);
+  border-radius: var(--radius-base);
+  margin-top: var(--space-16);
+  border: 1px solid var(--color-border);
+  white-space: pre-wrap;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: 1.8;
+  display: none;
+}
+
+.ata-output.show {
+  display: block;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-24);
+  margin: var(--space-24) 0;
+}
+
+.tip-card {
+  background: var(--color-bg-6);
+  padding: var(--space-20);
+  border-radius: var(--radius-base);
+  border-left: 4px solid var(--color-warning);
+}
+
+.tip-card h4 {
+  margin-top: 0;
+  color: var(--color-warning);
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .nav {
+    gap: var(--space-4);
+  }
+  
+  .nav-btn {
+    font-size: var(--font-size-sm);
+    padding: var(--space-8) var(--space-12);
+  }
+  
+  .container {
+    padding: var(--space-16) var(--space-12);
+  }
+  
+  .card {
+    padding: var(--space-16);
+  }
+  
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Planejamento e Monitoramento de Atividades Administrativas</h1>
+        <p>Guia completo sobre engajamento, cooperação e condução de reuniões profissionais</p>
+    </div>
+
+    <nav class="nav">
+        <button class="nav-btn active" onclick="showSection('section1')">1. Engajamento &amp; Cooperação</button>
+        <button class="nav-btn" onclick="showSection('section1-1')">1.1 Amabilidade</button>
+        <button class="nav-btn" onclick="showSection('section1-2')">1.2 Estratégias</button>
+        <button class="nav-btn" onclick="showSection('section1-3')">1.3 Benefícios</button>
+        <button class="nav-btn" onclick="showSection('section2')">2. Condução de Reunião</button>
+        <button class="nav-btn" onclick="showSection('section2-1')">2.1 Tipos</button>
+        <button class="nav-btn" onclick="showSection('section2-2')">2.2 Planejamento</button>
+        <button class="nav-btn" onclick="showSection('section2-3')">2.3 Registros</button>
+        <button class="nav-btn" onclick="showSection('section2-4')">2.4 Postura</button>
+        <button class="nav-btn" onclick="showSection('section2-5')">2.5 Apresentação</button>
+    </nav>
+
+    <div class="container">
+        <!-- Seção 1: Engajamento e Cooperação -->
+        <section id="section1" class="section active">
+            <div class="card">
+                <h2>1. Engajamento e Cooperação nas Relações Profissionais</h2>
+                <p>O sucesso de qualquer organização depende da capacidade de seus colaboradores trabalharem juntos de forma harmoniosa e produtiva. O engajamento e a cooperação são pilares fundamentais para criar um ambiente de trabalho saudável, inovador e eficiente.</p>
+                
+                <div class="img-container">
+                    <img src="https://pplx-res.cloudinary.com/image/upload/v1763057439/search_images/2f02ad791841dcc5997aa05f79234cbbf93c15fb.jpg" alt="Reunião empresarial moderna">
+                    <p class="img-caption">Ambiente colaborativo moderno: espaço propício para engajamento e cooperação</p>
+                </div>
+
+                <p>Nesta seção, exploraremos como a amabilidade, as estratégias práticas e os benefícios tangíveis do engajamento e cooperação podem transformar as relações profissionais no contexto brasileiro.</p>
+
+                <div class="author-quote">
+                    <p><strong>Daniel Goleman</strong> destaca que "A inteligência emocional é duas vezes mais importante que as habilidades técnicas para alcançar o sucesso profissional". Isso evidencia que competências como empatia, cooperação e amabilidade são diferenciais competitivos no mundo corporativo.</p>
+                </div>
+
+                <button class="btn" onclick="showSection('section1-1')">Explorar: O Papel da Amabilidade →</button>
+            </div>
+        </section>
+
+        <!-- Seção 1.1: O Papel da Amabilidade -->
+        <section id="section1-1" class="section">
+            <div class="card">
+                <h2>1.1 O Papel da Amabilidade</h2>
+                <p>A amabilidade no ambiente de trabalho não é apenas uma qualidade desejável, mas uma competência estratégica que influencia diretamente a produtividade, o clima organizacional e os resultados da equipe.</p>
+
+                <h3>Por que a Amabilidade é Importante?</h3>
+                <p>No contexto empresarial brasileiro, onde as relações interpessoais são valorizadas, a amabilidade atua como catalisador para:</p>
+                <ul>
+                    <li>Construir confiança entre membros da equipe</li>
+                    <li>Facilitar a comunicação aberta e honesta</li>
+                    <li>Reduzir conflitos e mal-entendidos</li>
+                    <li>Criar um ambiente de trabalho mais acolhedor</li>
+                    <li>Aumentar a retenção de talentos</li>
+                </ul>
+
+                <div class="author-quote">
+                    <p><strong>Dale Carnegie</strong>, em sua obra clássica, afirma: "Você pode fazer mais amigos em dois meses sendo genuinamente interessado em outras pessoas do que em dois anos tentando fazer com que as pessoas se interessem por você".</p>
+                </div>
+
+                <div class="author-quote">
+                    <p><strong>Flavia Faugeres</strong>, especialista em comportamento organizacional, ressalta que "A amabilidade no trabalho gera um círculo virtuoso: colaboradores tratados com respeito e gentileza tendem a replicar esse comportamento, criando uma cultura organizacional positiva".</p>
+                </div>
+
+                <h3>A Amabilidade e a Liderança</h3>
+                <p>Líderes que demonstram amabilidade conseguem engajar suas equipes de forma mais eficaz. Segundo Daniel Goleman, a inteligência emocional - que inclui a capacidade de ser amável e empático - é fundamental para líderes inspiradores.</p>
+
+                <div class="example-box">
+                    <h4>Exemplo Prático Brasileiro:</h4>
+                    <p>Uma gerente de RH em São Paulo implementou a prática de enviar mensagens de agradecimento personalizadas para membros da equipe que demonstraram esforço extra. O resultado foi um aumento de 35% no engajamento da equipe em apenas três meses, medido por pesquisas internas de satisfação.</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Exemplo Prático Brasileiro:</h4>
+                    <p>Em uma empresa de tecnologia no Rio de Janeiro, o CEO adotou o hábito de cumprimentar pessoalmente cada colaborador ao chegar pela manhã. Esse gesto simples de amabilidade contribuiu para criar um clima organizacional mais próximo e familiar, reduzindo a rotatividade em 20%.</p>
+                </div>
+
+                <h3>Como Cultivar a Amabilidade no Dia a Dia</h3>
+                <div class="grid-2">
+                    <div class="tip-card">
+                        <h4>Escuta Ativa</h4>
+                        <p>Demonstre interesse genuíno pelas preocupações e ideias dos colegas. Mantenha contato visual e faça perguntas relevantes.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Reconhecimento</h4>
+                        <p>Valorize publicamente as conquistas dos membros da equipe, mesmo as pequenas vitórias.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Empatia</h4>
+                        <p>Coloque-se no lugar do outro antes de julgar ou criticar. Entenda o contexto antes de reagir.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Feedback Construtivo</h4>
+                        <p>Ao dar feedback, seja gentil na forma, mas claro no conteúdo. Foque no comportamento, não na pessoa.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 1.2: Estratégias para Engajamento e Cooperação -->
+        <section id="section1-2" class="section">
+            <div class="card">
+                <h2>1.2 Estratégias para o Engajamento e a Cooperação</h2>
+                <p>Implementar estratégias eficazes de engajamento e cooperação requer conhecimento teórico aliado à prática consistente. Vamos explorar abordagens comprovadas por especialistas renomados.</p>
+
+                <h3>Estratégias Baseadas em Daniel Goleman (Inteligência Emocional)</h3>
+                <div class="author-quote">
+                    <p><strong>Daniel Goleman</strong> identifica cinco componentes da inteligência emocional: autoconsciência, autorregulação, motivação, empatia e habilidades sociais.</p>
+                </div>
+
+                <h4>Aplicações Práticas:</h4>
+                <ul>
+                    <li><strong>Autoconsciência:</strong> Realize autoavaliações regulares sobre suas reações emocionais no trabalho</li>
+                    <li><strong>Autorregulação:</strong> Pratique técnicas de controle emocional antes de reuniões importantes</li>
+                    <li><strong>Empatia:</strong> Desenvolva a capacidade de ler sinais não-verbais dos colegas</li>
+                    <li><strong>Habilidades Sociais:</strong> Invista em networking interno e construção de relacionamentos</li>
+                </ul>
+
+                <h3>Estratégias Baseadas em Stephen Covey (Os 7 Hábitos)</h3>
+                <div class="author-quote">
+                    <p><strong>Stephen Covey</strong> ensina que "Procure primeiro compreender, depois ser compreendido" e "Pense Ganha-Ganha".</p>
+                </div>
+
+                <h4>Aplicações Práticas:</h4>
+                <ul>
+                    <li><strong>Pensar Ganha-Ganha:</strong> Em negociações, busque soluções que beneficiem todas as partes</li>
+                    <li><strong>Criar Sinergia:</strong> Combine os pontos fortes de diferentes membros da equipe em projetos colaborativos</li>
+                    <li><strong>Ser Proativo:</strong> Antecipe necessidades da equipe e tome iniciativa para resolver problemas</li>
+                    <li><strong>Compreender Primeiro:</strong> Em conflitos, ouça atentamente antes de defender seu ponto de vista</li>
+                </ul>
+
+                <div class="example-box">
+                    <h4>Exemplo Prático Brasileiro:</h4>
+                    <p>Uma empresa de consultoria em Belo Horizonte implementou reuniões semanais de "retrospectiva ganha-ganha", onde cada equipe identifica como seus projetos beneficiam outros departamentos. Isso aumentou a colaboração interdepartamental em 45%.</p>
+                </div>
+
+                <h3>Estratégias Baseadas em Dale Carnegie</h3>
+                <div class="author-quote">
+                    <p><strong>Dale Carnegie</strong> enfatiza: "Elogie as menores conquistas e cada conquista. Seja caloroso em sua aprovação e generoso em seus elogios".</p>
+                </div>
+
+                <h4>Aplicações Práticas:</h4>
+                <ul>
+                    <li><strong>Feedback Positivo Frequente:</strong> Reconheça esforços diariamente, não apenas em avaliações formais</li>
+                    <li><strong>Escuta Ativa:</strong> Demonstre interesse genuíno pelas ideias dos colegas</li>
+                    <li><strong>Construir Confiança:</strong> Cumpra sempre suas promessas e compromissos</li>
+                    <li><strong>Admitir Erros:</strong> Seja transparente quando cometer equívocos</li>
+                </ul>
+
+                <div class="example-box">
+                    <h4>Exemplo Prático Brasileiro:</h4>
+                    <p>Criação de grupos de WhatsApp para resolução rápida de problemas, promovendo comunicação ágil e cooperação em tempo real. Uma empresa logística em Curitiba reduziu o tempo de resposta a problemas operacionais de 4 horas para 30 minutos usando essa estratégia.</p>
+                </div>
+
+                <div class="quiz-container">
+                    <h3>Autoavaliação: Qual Estratégia Você Mais Utiliza?</h3>
+                    <div class="quiz-question">
+                        <p>1. Ao enfrentar um conflito com um colega, sua primeira reação é:</p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="q1" id="q1a" value="a">
+                                <label for="q1a">Defender imediatamente meu ponto de vista</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q1" id="q1b" value="b">
+                                <label for="q1b">Ouvir primeiro o que o colega tem a dizer</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q1" id="q1c" value="c">
+                                <label for="q1c">Evitar o confronto e esperar que se resolva sozinho</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>2. Com que frequência você reconhece publicamente o bom trabalho dos colegas?</p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="q2" id="q2a" value="a">
+                                <label for="q2a">Raramente ou nunca</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q2" id="q2b" value="b">
+                                <label for="q2b">Frequentemente, sempre que vejo algo bom</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q2" id="q2c" value="c">
+                                <label for="q2c">Apenas em avaliações formais</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>3. Ao trabalhar em equipe, você:</p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="q3" id="q3a" value="a">
+                                <label for="q3a">Foca apenas nas suas tarefas individuais</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q3" id="q3b" value="b">
+                                <label for="q3b">Busca ativamente soluções que beneficiem todos (ganha-ganha)</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q3" id="q3c" value="c">
+                                <label for="q3c">Ajuda quando solicitado, mas não toma iniciativa</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn" onclick="checkQuiz1()">Verificar Respostas</button>
+                    <div id="quiz1-result" class="quiz-result"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 1.3: Benefícios -->
+        <section id="section1-3" class="section">
+            <div class="card">
+                <h2>1.3 Benefícios do Engajamento e da Cooperação no Trabalho</h2>
+                <p>Os benefícios de uma cultura organizacional baseada em engajamento e cooperação são mensuráveis e impactam diretamente os resultados da empresa.</p>
+
+                <h3>Principais Benefícios Comprovados:</h3>
+
+                <h4>1. Aumento da Produtividade</h4>
+                <p>Equipes engajadas são até 21% mais produtivas, segundo estudos da Gallup. No contexto brasileiro, empresas que investem em engajamento reportam melhorias significativas.</p>
+                
+                <div class="example-box">
+                    <h4>Exemplo Brasileiro:</h4>
+                    <p>Uma empresa de manufatura em São Bernardo do Campo implementou programas de reconhecimento e cooperação entre turnos. O resultado foi um aumento de 28% na produtividade em 6 meses.</p>
+                </div>
+
+                <h4>2. Melhoria na Comunicação</h4>
+                <p>Ambientes cooperativos promovem comunicação transparente e reduzem ruídos organizacionais.</p>
+
+                <ul>
+                    <li>Redução de conflitos internos</li>
+                    <li>Maior clareza nas diretrizes e objetivos</li>
+                    <li>Feedback mais construtivo e frequente</li>
+                    <li>Decisões mais ágeis e assertivas</li>
+                </ul>
+
+                <h4>3. Estímulo à Inovação</h4>
+                <div class="author-quote">
+                    <p>Segundo <strong>Stephen Covey</strong>, "A sinergia é a essência da liderança transformadora. É o trabalho de equipe, o trabalho em conjunto, a construção de equipes - é o desenvolvimento da unidade e criatividade com outros seres humanos".</p>
+                </div>
+
+                <p>Equipes que cooperam geram mais ideias inovadoras porque:</p>
+                <ul>
+                    <li>Combinam perspectivas diversas</li>
+                    <li>Sentem-se seguras para arriscar e experimentar</li>
+                    <li>Constroem sobre as ideias uns dos outros</li>
+                    <li>Compartilham conhecimentos especializados</li>
+                </ul>
+
+                <h4>4. Redução de Turnover</h4>
+                <p>Colaboradores engajados permanecem mais tempo nas empresas, reduzindo custos com recrutamento e treinamento.</p>
+
+                <div class="example-box">
+                    <h4>Dados Brasileiros:</h4>
+                    <p>Empresas certificadas como "Great Place to Work" no Brasil apresentam taxa de rotatividade 50% menor que a média do mercado, segundo pesquisa da FIA (Fundação Instituto de Administração).</p>
+                </div>
+
+                <h4>5. Clima Organizacional Positivo</h4>
+                <p>Um ambiente de cooperação cria um clima organizacional saudável, que impacta:</p>
+                <ul>
+                    <li>Saúde mental dos colaboradores</li>
+                    <li>Redução do absenteísmo</li>
+                    <li>Maior satisfação no trabalho</li>
+                    <li>Melhor reputação da empresa no mercado</li>
+                </ul>
+
+                <h4>6. Melhores Resultados Financeiros</h4>
+                <div class="author-quote">
+                    <p><strong>Daniel Goleman</strong> demonstra em seus estudos que empresas com alta inteligência emocional coletiva superam suas concorrentes em até 20% em termos de resultados financeiros.</p>
+                </div>
+
+                <div class="img-container">
+                    <img src="https://pplx-res.cloudinary.com/image/upload/v1763057439/search_images/658ef0c5599e3e6437beda24e430a2723df7dc44.jpg" alt="Ética e postura profissional">
+                    <p class="img-caption">A ética e a cooperação são fundamentais para o sucesso organizacional</p>
+                </div>
+
+                <h3>Resumo dos Benefícios</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Benefício</th>
+                                <th>Impacto Médio</th>
+                                <th>Área Afetada</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Aumento de Produtividade</td>
+                                <td>+21%</td>
+                                <td>Operacional</td>
+                            </tr>
+                            <tr>
+                                <td>Redução de Turnover</td>
+                                <td>-50%</td>
+                                <td>RH/Custos</td>
+                            </tr>
+                            <tr>
+                                <td>Melhoria na Inovação</td>
+                                <td>+35%</td>
+                                <td>P&amp;D/Estratégica</td>
+                            </tr>
+                            <tr>
+                                <td>Satisfação dos Colaboradores</td>
+                                <td>+40%</td>
+                                <td>Clima Organizacional</td>
+                            </tr>
+                            <tr>
+                                <td>Resultados Financeiros</td>
+                                <td>+20%</td>
+                                <td>Financeira</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 2: Condução de Reunião -->
+        <section id="section2" class="section">
+            <div class="card">
+                <h2>2. Condução de Reunião</h2>
+                <p>Reuniões eficazes são fundamentais para o sucesso organizacional. No entanto, muitas empresas brasileiras sofrem com reuniões improdutivas que consomem tempo e recursos sem gerar resultados.</p>
+
+                <div class="img-container">
+                    <img src="https://pplx-res.cloudinary.com/image/upload/v1763057439/search_images/2f02ad791841dcc5997aa05f79234cbbf93c15fb.jpg" alt="Sala de reunião moderna">
+                    <p class="img-caption">Ambiente moderno e profissional para reuniões produtivas</p>
+                </div>
+
+                <p>Esta seção aborda os aspectos essenciais para conduzir reuniões produtivas:</p>
+                <ul>
+                    <li>Tipos de reunião e seus objetivos específicos</li>
+                    <li>Planejamento eficaz com checklists práticos</li>
+                    <li>Elaboração de registros e relatórios profissionais</li>
+                    <li>Postura e linguagem corporal adequadas</li>
+                    <li>Técnicas modernas de apresentação</li>
+                </ul>
+
+                <div class="author-quote">
+                    <p><strong>Stephen Covey</strong> afirma: "A reunião mais produtiva é aquela onde cada participante sabe exatamente por que está ali e o que se espera dele".</p>
+                </div>
+
+                <button class="btn" onclick="showSection('section2-1')">Explorar: Tipos de Reunião →</button>
+            </div>
+        </section>
+
+        <!-- Seção 2.1: Tipos e Objetivos -->
+        <section id="section2-1" class="section">
+            <div class="card">
+                <h2>2.1 Tipos e Objetivos da Reunião</h2>
+                <p>Entender o tipo de reunião adequado para cada situação é crucial para alcançar os objetivos desejados. Cada tipo tem características, estruturas e expectativas específicas.</p>
+
+                <h3>Tipos de Reunião e Suas Características</h3>
+                <p>Clique em cada tipo para ver exemplos práticos:</p>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tipo de Reunião</th>
+                                <th>Objetivo Principal</th>
+                                <th>Duração Típica</th>
+                                <th>Participantes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="expandable-row" onclick="toggleExpand('reuniao-informativa')">
+                                <td><strong>Informativa</strong> 👁️</td>
+                                <td>Comunicar informações e atualizações</td>
+                                <td>15-30 min</td>
+                                <td>Equipe completa</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <div id="reuniao-informativa" class="expandable-content">
+                                        <h4>Reunião Informativa - Exemplo Prático</h4>
+                                        <p><strong>Contexto:</strong> Comunicar mudanças nas políticas de home office</p>
+                                        <p><strong>Estrutura:</strong></p>
+                                        <ul>
+                                            <li>5 min: Apresentação das novas políticas</li>
+                                            <li>10 min: Explicação dos impactos</li>
+                                            <li>10 min: Esclarecimento de dúvidas</li>
+                                            <li>5 min: Próximos passos e encerramento</li>
+                                        </ul>
+                                        <p><strong>Exemplo Brasileiro:</strong> Uma empresa de São Paulo usou reunião informativa para comunicar a nova política de benefícios, reduzindo dúvidas no RH em 70%.</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="expandable-row" onclick="toggleExpand('reuniao-decisao')">
+                                <td><strong>Decisão</strong> ⚖️</td>
+                                <td>Tomar decisões importantes coletivamente</td>
+                                <td>45-90 min</td>
+                                <td>Tomadores de decisão</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <div id="reuniao-decisao" class="expandable-content">
+                                        <h4>Reunião de Decisão - Exemplo Prático</h4>
+                                        <p><strong>Contexto:</strong> Decidir sobre investimento em nova tecnologia</p>
+                                        <p><strong>Estrutura:</strong></p>
+                                        <ul>
+                                            <li>15 min: Apresentação da proposta e dados</li>
+                                            <li>30 min: Discussão de prós e contras</li>
+                                            <li>20 min: Análise de alternativas</li>
+                                            <li>15 min: Votação e formalização da decisão</li>
+                                            <li>10 min: Definição de responsáveis e prazos</li>
+                                        </ul>
+                                        <p><strong>Exemplo Brasileiro:</strong> Conselho gestor de startup em Florianópolis decidiu sobre mudança de sede usando metodologia estruturada, alcançando consenso em 60 minutos.</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="expandable-row" onclick="toggleExpand('reuniao-brainstorm')">
+                                <td><strong>Brainstorming</strong> 💡</td>
+                                <td>Gerar ideias criativas e inovadoras</td>
+                                <td>60-120 min</td>
+                                <td>Equipe multidisciplinar</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <div id="reuniao-brainstorm" class="expandable-content">
+                                        <h4>Reunião de Brainstorming - Exemplo Prático</h4>
+                                        <p><strong>Contexto:</strong> Criar campanha de marketing para novo produto</p>
+                                        <p><strong>Estrutura:</strong></p>
+                                        <ul>
+                                            <li>10 min: Contextualização do desafio</li>
+                                            <li>40 min: Geração livre de ideias (sem críticas)</li>
+                                            <li>30 min: Agrupamento e refinamento</li>
+                                            <li>30 min: Seleção das melhores ideias</li>
+                                            <li>10 min: Próximos passos</li>
+                                        </ul>
+                                        <p><strong>Dica:</strong> Use técnicas como mapas mentais, técnica 635, ou SCAMPER</p>
+                                        <p><strong>Exemplo Brasileiro:</strong> Agência de publicidade em Porto Alegre gerou 150 ideias em sessão de brainstorming, resultando em campanha premiada.</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="expandable-row" onclick="toggleExpand('reuniao-treinamento')">
+                                <td><strong>Treinamento</strong> 📚</td>
+                                <td>Desenvolver habilidades e conhecimentos</td>
+                                <td>2-4 horas</td>
+                                <td>Equipe ou departamento</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <div id="reuniao-treinamento" class="expandable-content">
+                                        <h4>Reunião de Treinamento - Exemplo Prático</h4>
+                                        <p><strong>Contexto:</strong> Capacitar equipe em novo sistema de gestão</p>
+                                        <p><strong>Estrutura:</strong></p>
+                                        <ul>
+                                            <li>30 min: Apresentação teórica do sistema</li>
+                                            <li>60 min: Demonstração prática</li>
+                                            <li>60 min: Exercícios hands-on</li>
+                                            <li>20 min: Esclarecimento de dúvidas</li>
+                                            <li>10 min: Avaliação e feedback</li>
+                                        </ul>
+                                        <p><strong>Exemplo Brasileiro:</strong> Rede de varejo treinou 500 colaboradores em novo PDV usando formato híbrido (presencial + online), com 95% de aproveitamento.</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="expandable-row" onclick="toggleExpand('reuniao-projeto')">
+                                <td><strong>Desenvolvimento de Projetos</strong> 🚀</td>
+                                <td>Planejar e acompanhar projetos</td>
+                                <td>60-90 min</td>
+                                <td>Equipe do projeto</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <div id="reuniao-projeto" class="expandable-content">
+                                        <h4>Reunião de Projeto - Exemplo Prático</h4>
+                                        <p><strong>Contexto:</strong> Sprint planning em projeto ágil</p>
+                                        <p><strong>Estrutura:</strong></p>
+                                        <ul>
+                                            <li>15 min: Revisão do sprint anterior</li>
+                                            <li>30 min: Definição de objetivos do sprint</li>
+                                            <li>30 min: Quebra de tarefas e estimativas</li>
+                                            <li>10 min: Identificação de impedimentos</li>
+                                            <li>5 min: Comprometimento da equipe</li>
+                                        </ul>
+                                        <p><strong>Exemplo Brasileiro:</strong> Equipe de desenvolvimento em Recife adotou reuniões diárias de 15 minutos (daily stand-up), aumentando a transparência e reduzindo bloqueios em 60%.</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Como Escolher o Tipo Adequado?</h3>
+                <p>Para definir o tipo de reunião, pergunte-se:</p>
+                <ul>
+                    <li>Qual é o objetivo principal? (informar, decidir, criar, treinar, planejar)</li>
+                    <li>Quem precisa participar?</li>
+                    <li>Quanto tempo será necessário?</li>
+                    <li>Qual formato trará melhores resultados?</li>
+                </ul>
+
+                <div class="author-quote">
+                    <p><strong>Dale Carnegie</strong> ensina: "O propósito de uma reunião deve ser tão claro quanto um cristal. Se você não consegue explicar em uma frase por que está reunindo pessoas, provavelmente não deveria fazer essa reunião".</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 2.2: Planejamento -->
+        <section id="section2-2" class="section">
+            <div class="card">
+                <h2>2.2 Planejamento de Reuniões Eficazes</h2>
+                <p>O planejamento adequado é o segredo de reuniões produtivas. Uma reunião bem planejada economiza tempo, mantém o foco e gera resultados concretos.</p>
+
+                <div class="author-quote">
+                    <p><strong>Stephen Covey</strong> afirma: "Começar com o fim em mente" é um dos hábitos mais importantes. Aplique isso às suas reuniões: comece pelo resultado desejado.</p>
+                </div>
+
+                <h3>Checklist de Planejamento de Reunião</h3>
+                <p>Marque os itens à medida que planeja sua próxima reunião:</p>
+
+                <div class="checklist">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check1" onchange="toggleChecked(this)">
+                        <label for="check1">Definir o objetivo claro e específico da reunião</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check2" onchange="toggleChecked(this)">
+                        <label for="check2">Identificar quem realmente precisa participar (evite convidar em excesso)</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check3" onchange="toggleChecked(this)">
+                        <label for="check3">Escolher data e horário convenientes para todos os participantes</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check4" onchange="toggleChecked(this)">
+                        <label for="check4">Estimar duração realista (e reservar sala com margem de segurança)</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check5" onchange="toggleChecked(this)">
+                        <label for="check5">Criar e distribuir pauta detalhada com antecedência mínima de 24h</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check6" onchange="toggleChecked(this)">
+                        <label for="check6">Incluir na pauta: objetivos, tópicos, tempo por tópico e responsáveis</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check7" onchange="toggleChecked(this)">
+                        <label for="check7">Enviar materiais de leitura prévia, se necessário</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check8" onchange="toggleChecked(this)">
+                        <label for="check8">Reservar sala adequada (tamanho, equipamentos, privacidade)</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check9" onchange="toggleChecked(this)">
+                        <label for="check9">Testar equipamentos (projetor, microfone, videoconferência) com antecedência</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check10" onchange="toggleChecked(this)">
+                        <label for="check10">Definir quem será o facilitador/moderador</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check11" onchange="toggleChecked(this)">
+                        <label for="check11">Designar responsável por fazer anotações/ata</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check12" onchange="toggleChecked(this)">
+                        <label for="check12">Preparar apresentação ou materiais de apoio</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check13" onchange="toggleChecked(this)">
+                        <label for="check13">Planejar como será tomada as decisões (votação, consenso, etc.)</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check14" onchange="toggleChecked(this)">
+                        <label for="check14">Prever tempo para perguntas e discussões</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check15" onchange="toggleChecked(this)">
+                        <label for="check15">Definir como será o follow-up pós-reunião</label>
+                    </div>
+                </div>
+
+                <h3>Estrutura Típica de uma Pauta Eficaz</h3>
+                <div class="example-box">
+                    <h4>Modelo de Pauta:</h4>
+                    <p><strong>Reunião:</strong> Planejamento Estratégico Q4 2025</p>
+                    <p><strong>Data:</strong> 20/11/2025 | <strong>Horário:</strong> 14h00 - 16h00</p>
+                    <p><strong>Local:</strong> Sala de Reuniões 3 (ou link Zoom)</p>
+                    <p><strong>Participantes:</strong> Diretoria e Gerentes de Departamento</p>
+                    <p><strong>Facilitador:</strong> Maria Silva | <strong>Relator:</strong> João Santos</p>
+                    <br>
+                    <p><strong>Objetivos:</strong></p>
+                    <ul>
+                        <li>Definir metas do Q4</li>
+                        <li>Alocar recursos por departamento</li>
+                        <li>Identificar riscos e mitigações</li>
+                    </ul>
+                    <br>
+                    <p><strong>Agenda:</strong></p>
+                    <ol>
+                        <li>14h00-14h10 - Abertura e objetivos (Maria)</li>
+                        <li>14h10-14h30 - Revisão de resultados Q3 (João)</li>
+                        <li>14h30-15h00 - Apresentação de metas Q4 (Gerentes)</li>
+                        <li>15h00-15h30 - Discussão e ajustes</li>
+                        <li>15h30-15h50 - Definição de recursos e responsáveis</li>
+                        <li>15h50-16h00 - Resumo de decisões e próximos passos</li>
+                    </ol>
+                </div>
+
+                <div class="author-quote">
+                    <p><strong>Dale Carnegie</strong> recomenda: "Prepare-se tão bem que você possa conduzir a reunião sem olhar para suas anotações. A preparação demonstra respeito pelo tempo dos outros".</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 2.3: Registros e Relatórios -->
+        <section id="section2-3" class="section">
+            <div class="card">
+                <h2>2.3 Registros e Relatórios de Reuniões</h2>
+                <p>Documentar adequadamente as reuniões é essencial para garantir accountability, facilitar o follow-up e criar histórico organizacional.</p>
+
+                <h3>Importância dos Registros</h3>
+                <ul>
+                    <li>Mantém todos alinhados sobre decisões tomadas</li>
+                    <li>Define claramente responsabilidades e prazos</li>
+                    <li>Serve como referência futura</li>
+                    <li>Facilita a prestação de contas</li>
+                    <li>Evita retrabalho e mal-entendidos</li>
+                </ul>
+
+                <h3>Elementos Essenciais de uma Ata</h3>
+                <p>Segundo boas práticas empresariais brasileiras, uma ata deve conter:</p>
+                <ul>
+                    <li><strong>Cabeçalho:</strong> Data, horário, local e tipo de reunião</li>
+                    <li><strong>Participantes:</strong> Presentes, ausentes e convidados</li>
+                    <li><strong>Pauta:</strong> Temas discutidos</li>
+                    <li><strong>Discussões:</strong> Resumo objetivo dos pontos principais</li>
+                    <li><strong>Decisões:</strong> O que foi decidido</li>
+                    <li><strong>Ações:</strong> Tarefas, responsáveis e prazos</li>
+                    <li><strong>Próximos passos:</strong> Encaminhamentos futuros</li>
+                </ul>
+
+                <h3>Modelo de Ata Profissional</h3>
+                <div class="example-box">
+                    <h4>Exemplo de Ata:</h4>
+                    <pre style="background: var(--color-surface); padding: var(--space-16); border-radius: var(--radius-base); overflow-x: auto;">
+ATA DE REUNIÃO Nº 024/2025
+
+Data: 13 de novembro de 2025
+Horário: 09h00 às 10h30
+Local: Sala de Reuniões Executiva
+Tipo: Reunião de Decisão - Aprovação de Orçamento
+
+Participantes Presentes:
+- Ana Paula Costa (Diretora Financeira)
+- Carlos Mendes (Gerente de Marketing)
+- Beatriz Souza (Gerente de Operações)
+- Roberto Lima (Analista Financeiro - Relator)
+
+Participantes Ausentes:
+- Fernando Alves (Gerente de TI - justificado)
+
+Pauta:
+1. Análise da proposta de orçamento 2026
+2. Distribuição de recursos por departamento
+3. Aprovação final e próximos passos
+
+Resumo das Discussões:
+
+1. Análise de Orçamento 2026
+Ana Paula apresentou a proposta de orçamento total de R$ 5,2 milhões,
+representando crescimento de 15% em relação a 2025. Carlos questionou
+a redução de 8% no budget de marketing, argumentando sobre necessidade
+de investimento em marketing digital. Beatriz apoiou a posição e
+sugeriu remanejamento de recursos.
+
+2. Distribuição de Recursos
+Após discussão, o grupo concordou em:
+- Manter orçamento de marketing em níveis de 2025
+- Reduzir despesas administrativas em 10%
+- Aumentar investimento em tecnologia em 20%
+
+3. Aprovação
+Proposta revista foi aprovada por unanimidade.
+
+Decisões Tomadas:
+✓ Orçamento 2026 aprovado no valor de R$ 5,2 milhões
+✓ Marketing mantido em R$ 800 mil (sem redução)
+✓ TI aumentado para R$ 1,2 milhão
+✓ Administrativo reduzido para R$ 900 mil
+
+Ações e Responsáveis:
+
+| Ação | Responsável | Prazo |
+|------|-------------|-------|
+| Elaborar documento final do orçamento | Ana Paula | 20/11/2025 |
+| Comunicar aprovação aos departamentos | Carlos/Beatriz | 15/11/2025 |
+| Atualizar sistema financeiro | Roberto | 22/11/2025 |
+| Agendar reunião de acompanhamento | Ana Paula | 30/11/2025 |
+
+Próxima Reunião: 30/11/2025 às 09h00 - Revisão de implementação
+
+Encerramento: 10h30
+
+Assinaturas:
+________________________    ________________________
+Ana Paula Costa             Roberto Lima
+(Presidente)                (Relator)
+                    </pre>
+                </div>
+
+                <h3>Gerador Interativo de Ata</h3>
+                <p>Preencha os campos abaixo para gerar uma ata básica:</p>
+
+                <div class="ata-generator">
+                    <div class="form-group">
+                        <label>Data da Reunião:</label>
+                        <input type="date" id="ata-data" placeholder="DD/MM/AAAA">
+                    </div>
+                    <div class="form-group">
+                        <label>Tema/Assunto Principal:</label>
+                        <input type="text" id="ata-tema" placeholder="Ex: Planejamento Trimestral">
+                    </div>
+                    <div class="form-group">
+                        <label>Participantes (separados por vírgula):</label>
+                        <input type="text" id="ata-participantes" placeholder="Ex: Maria Silva, João Santos, Ana Costa">
+                    </div>
+                    <div class="form-group">
+                        <label>Principal Decisão Tomada:</label>
+                        <textarea id="ata-decisao" rows="3" placeholder="Descreva a principal decisão tomada na reunião"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Próxima Ação (Tarefa):</label>
+                        <input type="text" id="ata-acao" placeholder="Ex: Elaborar relatório de vendas">
+                    </div>
+                    <div class="form-group">
+                        <label>Responsável pela Ação:</label>
+                        <input type="text" id="ata-responsavel" placeholder="Nome do responsável">
+                    </div>
+                    <div class="form-group">
+                        <label>Prazo:</label>
+                        <input type="date" id="ata-prazo">
+                    </div>
+
+                    <button class="btn" onclick="gerarAta()">Gerar Ata</button>
+
+                    <div id="ata-output" class="ata-output"></div>
+                </div>
+
+                <h3>Dicas para Registros Eficazes</h3>
+                <div class="grid-2">
+                    <div class="tip-card">
+                        <h4>Seja Objetivo</h4>
+                        <p>Evite opiniões pessoais. Registre fatos, decisões e compromissos de forma clara e concisa.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Use Linguagem Profissional</h4>
+                        <p>Mantenha tom formal e neutro. Evite gírias e expressões coloquiais.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Distribua Rapidamente</h4>
+                        <p>Envie a ata em até 24 horas após a reunião, enquanto a memória está fresca.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Destaque Ações</h4>
+                        <p>Use formatação (negrito, cores, tabelas) para tornar tarefas e prazos bem visíveis.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 2.4: Postura -->
+        <section id="section2-4" class="section">
+            <div class="card">
+                <h2>2.4 Postura Profissional em Reuniões</h2>
+                <p>A postura, tanto física quanto comportamental, comunica mensagens poderosas. Segundo especialistas em comunicação não-verbal, até 55% da comunicação é feita através da linguagem corporal.</p>
+
+                <div class="img-container">
+                    <img src="https://pplx-res.cloudinary.com/image/upload/v1763057439/search_images/2e98b0b1ae6f24abc7f3f27d2fe48e596ea948af.jpg" alt="Postura profissional">
+                    <p class="img-caption">Postura confiante e profissional transmite credibilidade e liderança</p>
+                </div>
+
+                <h3>Linguagem Corporal Eficaz</h3>
+                <p>Baseado nos ensinamentos de <strong>Reinaldo Polito</strong>, especialista brasileiro em oratória, e princípios de PNL (Programação Neurolinguística):</p>
+
+                <h4>Postura Física:</h4>
+                <ul>
+                    <li><strong>Postura ereta:</strong> Mantenha a coluna alinhada, ombros relaxados mas não caídos</li>
+                    <li><strong>Contato visual:</strong> Olhe nos olhos dos interlocutores, alternando entre todos os presentes</li>
+                    <li><strong>Gestos controlados:</strong> Use as mãos para enfatizar pontos, mas evite gestos excessivos ou nervosos</li>
+                    <li><strong>Expressão facial:</strong> Mantenha expressão atenta e receptiva, sorria quando apropriado</li>
+                    <li><strong>Posicionamento:</strong> Fique em posição que permita ver todos e ser visto</li>
+                </ul>
+
+                <div class="img-container">
+                    <img src="https://pplx-res.cloudinary.com/image/upload/v1763057439/search_images/85379d622aa2e7d8d9e7402254b1ed2d8f12081a.jpg" alt="Dicas de postura ergonômica">
+                    <p class="img-caption">Postura ergonômica adequada para reuniões longas: sentado e em pé</p>
+                </div>
+
+                <h4>Atitudes Profissionais:</h4>
+                <ul>
+                    <li><strong>Pontualidade:</strong> Chegue 5-10 minutos antes (ou entre na call com antecedência)</li>
+                    <li><strong>Atenção plena:</strong> Desligue celular ou deixe no silencioso, evite distrações</li>
+                    <li><strong>Escuta ativa:</strong> Demonstre que está ouvindo: acene, faça anotações, parafrase</li>
+                    <li><strong>Respeito ao tempo:</strong> Seja conciso em suas falas, respeite o tempo dos outros</li>
+                    <li><strong>Preparação:</strong> Chegue preparado, tendo lido a pauta e materiais prévios</li>
+                </ul>
+
+                <h3>Dicas Específicas por Situação</h3>
+
+                <h4>Como Participante:</h4>
+                <div class="example-box">
+                    <ul>
+                        <li>Sente-se em posição que permita ver o apresentador e outras pessoas</li>
+                        <li>Mantenha laptop/celular discreto (use apenas para anotações da reunião)</li>
+                        <li>Não interrompa - anote suas questões e levante na hora apropriada</li>
+                        <li>Contribua ativamente quando solicitado</li>
+                        <li>Evite conversas paralelas</li>
+                    </ul>
+                </div>
+
+                <h4>Como Apresentador/Facilitador:</h4>
+                <div class="example-box">
+                    <ul>
+                        <li>Fique em pé se possível (transmite autoridade e mantém energia)</li>
+                        <li>Use o espaço: movimente-se com propósito, não fique estático</li>
+                        <li>Faça pausas estratégicas para enfatizar pontos importantes</li>
+                        <li>Varie o tom de voz para manter a atenção</li>
+                        <li>Observe sinais de desatenção e ajuste a dinâmica</li>
+                    </ul>
+                </div>
+
+                <h3>Erros Comuns de Postura a Evitar</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Erro</th>
+                                <th>Por que evitar</th>
+                                <th>Alternativa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Braços cruzados</td>
+                                <td>Transmite defensividade ou fechamento</td>
+                                <td>Mãos sobre a mesa ou gestos abertos</td>
+                            </tr>
+                            <tr>
+                                <td>Olhar para baixo constantemente</td>
+                                <td>Demonstra insegurança ou desinteresse</td>
+                                <td>Alterne contato visual com todos</td>
+                            </tr>
+                            <tr>
+                                <td>Mexer excessivamente no celular</td>
+                                <td>Mostra falta de respeito e atenção</td>
+                                <td>Desligue ou deixe silencioso na bolsa</td>
+                            </tr>
+                            <tr>
+                                <td>Postura curvada/relaxada demais</td>
+                                <td>Transmite desleixo ou falta de energia</td>
+                                <td>Sente-se ereto mas confortável</td>
+                            </tr>
+                            <tr>
+                                <td>Interromper constantemente</td>
+                                <td>Demonstra falta de respeito pelos outros</td>
+                                <td>Anote e aguarde momento apropriado</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="quiz-container">
+                    <h3>Teste: Avalie sua Postura Profissional</h3>
+                    <div class="quiz-question">
+                        <p>1. Durante reuniões, você:</p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="postura1" value="a">
+                                <label>Frequentemente checa o celular para mensagens</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="postura1" value="b">
+                                <label>Mantém atenção total, anotando pontos importantes</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="postura1" value="c">
+                                <label>Participa quando interessado no assunto</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>2. Sua postura física geralmente é:</p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="postura2" value="a">
+                                <label>Relaxada, às vezes curvada na cadeira</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="postura2" value="b">
+                                <label>Ereta e atenta, mantendo contato visual</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="postura2" value="c">
+                                <label>Varia muito dependendo do meu humor</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>3. Quando alguém está falando, você:</p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="postura3" value="a">
+                                <label>Já prepara mentalmente sua resposta</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="postura3" value="b">
+                                <label>Escuta atentamente e parafraseia para confirmar entendimento</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="postura3" value="c">
+                                <label>Escuta parcialmente enquanto pensa em outras coisas</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn" onclick="checkPosturaQuiz()">Verificar Resultado</button>
+                    <div id="postura-quiz-result" class="quiz-result"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 2.5: Técnicas de Apresentação -->
+        <section id="section2-5" class="section">
+            <div class="card">
+                <h2>2.5 Técnicas de Apresentação Profissional</h2>
+                <p>Apresentações eficazes são essenciais em reuniões modernas. Dominar técnicas de apresentação aumenta sua capacidade de persuadir, informar e inspirar audiências.</p>
+
+                <h3>Principais Técnicas e Metodologias</h3>
+
+                <h4>1. Storytelling (Narrativa)</h4>
+                <p>Histórias são 22 vezes mais memoráveis que fatos isolados. Use a estrutura clássica:</p>
+                <ul>
+                    <li><strong>Contexto:</strong> Apresente a situação inicial</li>
+                    <li><strong>Desafio:</strong> Mostre o problema ou oportunidade</li>
+                    <li><strong>Ação:</strong> Descreva o que foi feito</li>
+                    <li><strong>Resultado:</strong> Demonstre os resultados alcançados</li>
+                    <li><strong>Aprendizado:</strong> Extraia lições relevantes</li>
+                </ul>
+
+                <div class="example-box">
+                    <h4>Exemplo Brasileiro de Storytelling:</h4>
+                    <p><strong>Contexto:</strong> "Em 2023, nossa equipe de vendas em Brasília enfrentava queda de 30% nas conversões."</p>
+                    <p><strong>Desafio:</strong> "Descobrimos que nosso processo estava desconectado das necessidades reais dos clientes."</p>
+                    <p><strong>Ação:</strong> "Implementamos treinamento em escuta ativa e pesquisas de satisfação semanais."</p>
+                    <p><strong>Resultado:</strong> "Em 6 meses, aumentamos as conversões em 45% e a satisfação do cliente em 60%."</p>
+                    <p><strong>Aprendizado:</strong> "Ouvir o cliente é mais importante que vender o produto."</p>
+                </div>
+
+                <h4>2. Técnica PREP (Point, Reason, Example, Point)</h4>
+                <p>Estrutura eficaz para apresentações concisas:</p>
+                <ul>
+                    <li><strong>Point (Ponto):</strong> Declare sua mensagem principal</li>
+                    <li><strong>Reason (Razão):</strong> Explique por que é importante</li>
+                    <li><strong>Example (Exemplo):</strong> Ilustre com caso concreto</li>
+                    <li><strong>Point (Ponto):</strong> Reforce a mensagem principal</li>
+                </ul>
+
+                <div class="example-box">
+                    <h4>Exemplo PREP:</h4>
+                    <p><strong>P:</strong> "Precisamos implementar home office híbrido."</p>
+                    <p><strong>R:</strong> "Estudos mostram aumento de 25% na produtividade e redução de 40% no turnover."</p>
+                    <p><strong>E:</strong> "A empresa X em São Paulo implementou e economizou R$ 2 milhões anuais."</p>
+                    <p><strong>P:</strong> "Portanto, o home office híbrido beneficia tanto empresa quanto colaboradores."</p>
+                </div>
+
+                <h4>3. PechaKucha (20x20)</h4>
+                <p>Formato dinâmico: 20 slides, 20 segundos cada = apresentação de 6min40s</p>
+                <ul>
+                    <li>Mantém ritmo acelerado e atenção da audiência</li>
+                    <li>Força concisão e foco no essencial</li>
+                    <li>Usa imagens impactantes com texto mínimo</li>
+                    <li>Ideal para pitch de ideias ou projetos</li>
+                </ul>
+
+                <h4>4. Mapeamento Mental (Mind Mapping)</h4>
+                <p>Técnica visual para organizar ideias complexas:</p>
+                <ul>
+                    <li>Coloque o tema central no meio</li>
+                    <li>Ramifique tópicos principais</li>
+                    <li>Subdivida em subtópicos</li>
+                    <li>Use cores e ícones para facilitar memorização</li>
+                </ul>
+
+                <h3>Estrutura de Apresentação de Alto Impacto</h3>
+                <div class="grid-2">
+                    <div class="tip-card">
+                        <h4>Abertura Forte (10%)</h4>
+                        <p>Comece com pergunta provocativa, estatística impactante ou história intrigante. Capture atenção nos primeiros 30 segundos.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Desenvolvimento (70%)</h4>
+                        <p>Apresente 3-5 pontos principais. Use regra de três: pessoas lembram melhor informações agrupadas em três.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Fechamento Memorável (20%)</h4>
+                        <p>Resuma pontos-chave, faça call-to-action claro, termine com frase impactante ou retorne à abertura.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Q&amp;A (Perguntas)</h4>
+                        <p>Reserve tempo para perguntas. Repita a pergunta antes de responder (garante que todos ouviram).</p>
+                    </div>
+                </div>
+
+                <h3>Dicas Práticas de Oratória</h3>
+                <p>Baseado em <strong>Reinaldo Polito</strong>, especialista brasileiro em oratória:</p>
+                <ul>
+                    <li><strong>Voz:</strong> Varie tom, volume e ritmo. Pausas são poderosas</li>
+                    <li><strong>Clareza:</strong> Articule bem as palavras, fale em velocidade moderada</li>
+                    <li><strong>Energia:</strong> Demonstre entusiasmo genuíno pelo tema</li>
+                    <li><strong>Simplicidade:</strong> Evite jargões excessivos, use linguagem acessível</li>
+                    <li><strong>Interação:</strong> Faça perguntas retóricas, envolva a audiência</li>
+                </ul>
+
+                <h3>Ferramentas e Recursos Visuais</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Ferramenta</th>
+                                <th>Melhor Uso</th>
+                                <th>Dica Principal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>PowerPoint/Google Slides</td>
+                                <td>Apresentações corporativas formais</td>
+                                <td>Máximo 6 linhas por slide, fonte mínima 24 pontos</td>
+                            </tr>
+                            <tr>
+                                <td>Prezi</td>
+                                <td>Apresentações dinâmicas e não-lineares</td>
+                                <td>Use com moderação, evite excesso de zoom</td>
+                            </tr>
+                            <tr>
+                                <td>Canva</td>
+                                <td>Apresentações visuais e criativas</td>
+                                <td>Aproveite templates profissionais prontos</td>
+                            </tr>
+                            <tr>
+                                <td>Miro/Mural</td>
+                                <td>Brainstorming e apresentações colaborativas</td>
+                                <td>Ideal para workshops e sessões interativas</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Checklist de Preparação de Apresentação</h3>
+                <ul>
+                    <li>✓ Conhecer profundamente a audiência (perfil, expectativas, nível de conhecimento)</li>
+                    <li>✓ Definir objetivo claro da apresentação (informar, persuadir, motivar)</li>
+                    <li>✓ Criar abertura impactante</li>
+                    <li>✓ Estruturar conteúdo em 3-5 pontos principais</li>
+                    <li>✓ Incluir exemplos práticos e cases reais</li>
+                    <li>✓ Usar recursos visuais (imagens > texto)</li>
+                    <li>✓ Preparar fechamento memorável com call-to-action</li>
+                    <li>✓ Ensaiar pelo menos 3 vezes</li>
+                    <li>✓ Testar equipamentos (projetor, microfone, remote)</li>
+                    <li>✓ Preparar respostas para possíveis perguntas</li>
+                    <li>✓ Ter plano B caso tecnologia falhe</li>
+                </ul>
+
+                <div class="quiz-container">
+                    <h3>Quiz: Técnicas de Apresentação</h3>
+                    <div class="quiz-question">
+                        <p>1. Qual é o tempo ideal para manter atenção máxima da audiência?</p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="apresent1" value="a">
+                                <label>60 minutos</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="apresent1" value="b">
+                                <label>15-20 minutos</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="apresent1" value="c">
+                                <label>5 minutos</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>2. Qual proporção de tempo deve ser dedicada à abertura?</p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="apresent2" value="a">
+                                <label>30% do tempo total</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="apresent2" value="b">
+                                <label>10% do tempo total</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="apresent2" value="c">
+                                <label>50% do tempo total</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>3. A técnica PREP significa:</p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="apresent3" value="a">
+                                <label>Preparação, Revisão, Execução, Performance</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="apresent3" value="b">
+                                <label>Point, Reason, Example, Point</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="apresent3" value="c">
+                                <label>Prática, Repetição, Ensaio, Apresentação</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn" onclick="checkApresentacaoQuiz()">Verificar Respostas</button>
+                    <div id="apresentacao-quiz-result" class="quiz-result"></div>
+                </div>
+
+                <div class="author-quote">
+                    <p><strong>Reinaldo Polito</strong> ensina: "A melhor apresentação não é aquela que você faz perfeitamente, mas aquela que conecta genuinamente com a audiência e a transforma de alguma forma".</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Navigation
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Remove active from all buttons
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active to clicked button
+            event.target.classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Toggle expandable content
+        function toggleExpand(id) {
+            const content = document.getElementById(id);
+            content.classList.toggle('show');
+        }
+
+        // Checklist toggle
+        function toggleChecked(checkbox) {
+            const item = checkbox.closest('.checklist-item');
+            if (checkbox.checked) {
+                item.classList.add('checked');
+            } else {
+                item.classList.remove('checked');
+            }
+        }
+
+        // Quiz 1 - Estratégias
+        function checkQuiz1() {
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            const q2 = document.querySelector('input[name="q2"]:checked');
+            const q3 = document.querySelector('input[name="q3"]:checked');
+            
+            const result = document.getElementById('quiz1-result');
+            
+            if (!q1 || !q2 || !q3) {
+                result.className = 'quiz-result show error';
+                result.innerHTML = '⚠️ Por favor, responda todas as questões.';
+                return;
+            }
+            
+            let score = 0;
+            if (q1.value === 'b') score++;
+            if (q2.value === 'b') score++;
+            if (q3.value === 'b') score++;
+            
+            if (score === 3) {
+                result.className = 'quiz-result show success';
+                result.innerHTML = '🎉 Excelente! Você demonstra forte aplicação das estratégias de Covey, Carnegie e Goleman. Continue praticando a escuta ativa, feedback positivo e pensamento ganha-ganha!';
+            } else if (score === 2) {
+                result.className = 'quiz-result show';
+                result.style.background = 'rgba(245, 158, 11, 0.15)';
+                result.style.border = '1px solid var(--color-warning)';
+                result.style.color = 'var(--color-warning)';
+                result.innerHTML = '👍 Bom resultado! Você aplica algumas estratégias, mas pode melhorar. Foque em ser mais proativo na escuta e no reconhecimento dos colegas.';
+            } else {
+                result.className = 'quiz-result show error';
+                result.innerHTML = '💡 Há espaço para crescimento. Revise as estratégias dos autores e pratique: escuta ativa (Carnegie), pensar ganha-ganha (Covey) e inteligência emocional (Goleman).';
+            }
+        }
+
+        // Quiz Postura
+        function checkPosturaQuiz() {
+            const p1 = document.querySelector('input[name="postura1"]:checked');
+            const p2 = document.querySelector('input[name="postura2"]:checked');
+            const p3 = document.querySelector('input[name="postura3"]:checked');
+            
+            const result = document.getElementById('postura-quiz-result');
+            
+            if (!p1 || !p2 || !p3) {
+                result.className = 'quiz-result show error';
+                result.innerHTML = '⚠️ Por favor, responda todas as questões.';
+                return;
+            }
+            
+            let score = 0;
+            if (p1.value === 'b') score++;
+            if (p2.value === 'b') score++;
+            if (p3.value === 'b') score++;
+            
+            if (score === 3) {
+                result.className = 'quiz-result show success';
+                result.innerHTML = '🌟 Postura Exemplar! Você demonstra excelente consciência sobre linguagem corporal e atitudes profissionais. Suas reuniões certamente são mais produtivas!';
+            } else if (score === 2) {
+                result.className = 'quiz-result show';
+                result.style.background = 'rgba(245, 158, 11, 0.15)';
+                result.style.border = '1px solid var(--color-warning)';
+                result.style.color = 'var(--color-warning)';
+                result.innerHTML = '👌 Boa postura! Você está no caminho certo. Preste mais atenção à escuta ativa e ao contato visual para aprimorar ainda mais.';
+            } else {
+                result.className = 'quiz-result show error';
+                result.innerHTML = '📈 Área de melhoria identificada! Revise as dicas de Reinaldo Polito sobre postura física e pratique atenção plena em reuniões. Pequenas mudanças trazem grandes resultados!';
+            }
+        }
+
+        // Quiz Apresentação
+        function checkApresentacaoQuiz() {
+            const a1 = document.querySelector('input[name="apresent1"]:checked');
+            const a2 = document.querySelector('input[name="apresent2"]:checked');
+            const a3 = document.querySelector('input[name="apresent3"]:checked');
+            
+            const result = document.getElementById('apresentacao-quiz-result');
+            
+            if (!a1 || !a2 || !a3) {
+                result.className = 'quiz-result show error';
+                result.innerHTML = '⚠️ Por favor, responda todas as questões.';
+                return;
+            }
+            
+            let score = 0;
+            if (a1.value === 'b') score++;
+            if (a2.value === 'b') score++;
+            if (a3.value === 'b') score++;
+            
+            if (score === 3) {
+                result.className = 'quiz-result show success';
+                result.innerHTML = '🎯 Perfeito! Você domina os conceitos de apresentações eficazes. Resposta correta: 15-20 min mantém atenção máxima, 10% para abertura, e PREP = Point, Reason, Example, Point.';
+            } else {
+                let feedback = '📚 Respostas corretas: <br>';
+                feedback += '1. <strong>15-20 minutos</strong> é o tempo ideal para máxima atenção<br>';
+                feedback += '2. <strong>10% do tempo</strong> deve ser dedicado à abertura forte<br>';
+                feedback += '3. PREP = <strong>Point, Reason, Example, Point</strong><br>';
+                feedback += 'Estude essas técnicas para aprimorar suas apresentações!';
+                
+                result.className = 'quiz-result show';
+                result.style.background = 'var(--color-bg-2)';
+                result.style.border = '1px solid var(--color-border)';
+                result.style.color = 'var(--color-text)';
+                result.innerHTML = feedback;
+            }
+        }
+
+        // Gerador de Ata
+        function gerarAta() {
+            const data = document.getElementById('ata-data').value;
+            const tema = document.getElementById('ata-tema').value;
+            const participantes = document.getElementById('ata-participantes').value;
+            const decisao = document.getElementById('ata-decisao').value;
+            const acao = document.getElementById('ata-acao').value;
+            const responsavel = document.getElementById('ata-responsavel').value;
+            const prazo = document.getElementById('ata-prazo').value;
+            
+            if (!data || !tema || !participantes || !decisao || !acao || !responsavel || !prazo) {
+                alert('Por favor, preencha todos os campos.');
+                return;
+            }
+            
+            const dataFormatada = new Date(data + 'T00:00:00').toLocaleDateString('pt-BR');
+            const prazoFormatado = new Date(prazo + 'T00:00:00').toLocaleDateString('pt-BR');
+            
+            const participantesArray = participantes.split(',').map(p => p.trim());
+            const participantesLista = participantesArray.map(p => `- ${p}`).join('\n');
+            
+            const ata = `ATA DE REUNIÃO
+
+Data: ${dataFormatada}
+Assunto: ${tema}
+
+Participantes Presentes:
+${participantesLista}
+
+Resumo:
+Reunião realizada para discussão sobre ${tema}.
+
+Principal Decisão Tomada:
+${decisao}
+
+Ações Definidas:
+
+| Ação | Responsável | Prazo |
+|------|-------------|-------|
+| ${acao} | ${responsavel} | ${prazoFormatado} |
+
+Próximos Passos:
+Acompanhar execução da ação definida até ${prazoFormatado}.
+
+_____________________________________________
+Ata elaborada em ${new Date().toLocaleDateString('pt-BR')}`;
+            
+            const output = document.getElementById('ata-output');
+            output.textContent = ata;
+            output.classList.add('show');
+        }
+    </script>
+</body>
+</html>
